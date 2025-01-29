@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.timer-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timer-card h2 {
+  margin: 0;
+}
+
+.timer-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.animation-placeholder {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.content {
+  margin-top: 40px;
+}
