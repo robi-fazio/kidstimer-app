@@ -1,53 +1,182 @@
 .App {
   text-align: center;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 30px;
 }
 
 .carousel-container {
   margin: 20px auto;
-  max-width: 400px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.slick-list {
+  overflow: visible;
+  padding: 30px 0 !important;
+}
+
+.slick-slide {
+  padding: 0 20px;
+  transition: transform 0.3s ease;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
 }
 
 .timer-card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 0 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-height: 450px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  width: calc(100% - 40px) !important;
+}
+
+.slick-center .timer-card {
+  transform: scale(1);
+  background: #ffffff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .timer-card h2 {
-  margin: 0;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
-.timer-card button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #61dafb;
+.duration-display {
+  font-size: 2.4em;
+  margin: 25px 0;
+  color: #3498db;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.progress-bar {
+  width: 85%;
+  height: 15px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  margin: 25px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background: #2ecc71;
+  transition: width 0.5s linear;
+}
+
+.card-controls {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.start-btn {
+  background: #3498db;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.1em;
   cursor: pointer;
+  margin-top: auto;
+  transition: all 0.3s ease;
 }
 
-.animation-placeholder {
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-}
-
-.content {
-  margin-top: 40px;
-}
-.timer-display {
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 1.5rem;
-}
-
-button:disabled {
-  background-color: #ccc;
+.start-btn:disabled {
+  background: #bdc3c7;
   cursor: not-allowed;
+}
+
+.pause-btn,
+.resume-btn,
+.cancel-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pause-btn { background: #f1c40f; color: #2c3e50; }
+.resume-btn { background: #2ecc71; color: white; }
+.cancel-btn { background: #e74c3c; color: white; }
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 10px 0;
+  }
+
+  .slick-list {
+    padding: 0 10px !important;
+  }
+
+  .timer-card {
+    margin: 0 5px;
+    transform: scale(0.9);
+    opacity: 0.7;
+    min-height: 380px;
+  }
+
+  .slick-center .timer-card {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .slick-slide:not(.slick-center) {
+    pointer-events: none;
+  }
+
+  .slick-track {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-card {
+    min-height: 360px;
+    padding: 20px;
+  }
+
+  .duration-display {
+    font-size: 2em;
+  }
+
+  .card-controls {
+    flex-direction: column;
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+audio {
+  display: none;
 }
