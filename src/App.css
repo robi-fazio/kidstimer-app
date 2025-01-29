@@ -18,6 +18,7 @@ h1 {
   position: relative;
 }
 
+/* Slick Carousel adjustments */
 .slick-list {
   overflow: visible;
   padding: 30px 0 !important;
@@ -56,6 +57,7 @@ h1 {
   z-index: 1;
 }
 
+/* Card content */
 .timer-card h2 {
   color: #2c3e50;
   margin: 0 0 20px 0;
@@ -71,6 +73,7 @@ h1 {
   letter-spacing: 2px;
 }
 
+/* Progress bar */
 .progress-bar {
   width: 85%;
   height: 15px;
@@ -87,6 +90,7 @@ h1 {
   transition: width 0.5s linear;
 }
 
+/* Control buttons */
 .card-controls {
   display: flex;
   gap: 15px;
@@ -128,51 +132,47 @@ h1 {
 .resume-btn { background: #2ecc71; color: white; }
 .cancel-btn { background: #e74c3c; color: white; }
 
+/* Responsive design */
 @media (max-width: 768px) {
   .carousel-container {
     padding: 10px 0;
   }
 
   .slick-list {
-    padding: 0 10px !important;
+    padding: 0 20% !important; /* Creates space for partial preview */
   }
 
   .timer-card {
-    margin: 0 5px;
+    margin: 0 10px;
     transform: scale(0.9);
-    opacity: 0.7;
     min-height: 380px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
   }
 
   .slick-center .timer-card {
     transform: scale(1);
     opacity: 1;
+    z-index: 1;
   }
 
   .slick-slide:not(.slick-center) {
-    pointer-events: none;
-  }
-
-  .slick-track {
-    justify-content: center;
+    pointer-events: none; /* Disable clicks on non-active cards */
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .timer-card {
-    min-height: 360px;
+    min-height: 380px;
     padding: 20px;
   }
-
-  .duration-display {
-    font-size: 2em;
-  }
-
+  
   .card-controls {
     flex-direction: column;
   }
-}
+} */
 
+/* Hide default slick arrows */
 .slick-arrow {
   display: none !important;
 }
